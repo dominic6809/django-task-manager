@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Task Management System{% endblock %}</title>
+    {% load static %}
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
+
+    <style>
+        .myfooter {
+            background-color: #f1f1f1;  /* Light gray background */
+            color: #333;               /* Dark text color */
+            margin-top: 50px;
+            text-align: center;        /* Center-align the text */
+            padding: 20px 0;           /* Padding for spacing */
+            position: relative;        /* Relative positioning */
+            bottom: 0;                 /* Stick to the bottom */
+            width: 100%;               /* Full width */
+        }
+        
+        .myfooter a {
+            color: hsla(239, 66%, 48%, 0.89);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .myfooter a:hover {
+            text-decoration: underline;
+            color: hsla(239, 98%, 65%, 0.829);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Task Management</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+    
+    <!-- footer.html -->
+<footer class="footer">
+    <div class="myfooter">
+        <p>© 2024 Dominic. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a> | 
+            <a href="#">Contact Us</a>
+        </p>
+    </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="{% static 'tasks/js/script.js' %}"></script>
+</body>
+</html>

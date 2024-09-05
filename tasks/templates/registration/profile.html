@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Welcome, {{ user.username }}!</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <!-- User Info -->
+            <div class="card">
+                <div class="card-body">
+                    <h4>Your Profile</h4>
+                    <p><strong>Email:</strong> {{ user.email }}</p>
+                    <p><strong>Location:</strong> {{ user_profile.location }}</p>
+                    <p><strong>Bio:</strong> {{ user_profile.bio }}</p>
+                    <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <!-- Task Summary -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4>Task Summary</h4>
+                    <p><strong>Pending:</strong> {{ pending_tasks_count }}</p>
+                    <p><strong>Completed:</strong> {{ completed_tasks_count }}</p>
+                    <p><strong>Overdue:</strong> {{ overdue_tasks_count }}</p>
+                </div>
+            </div>
+            <!-- Recent Tasks -->
+            <div class="card">
+                <div class="card-body">
+                    <h4>Recent Tasks</h4>
+                    <ul class="list-group">
+                        {% for task in recent_tasks %}
+                        <li class="list-group-item">
+                            {{ task.title }} - Due {{ task.due_date }}
+                            <a href="{% url 'task_detail' task.id %}" class="btn btn-sm btn-outline-primary">View</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Logout Button -->
+    <div class="text-right mt-4">
+        <a href="{% url 'logout' %}" class="btn btn-secondary">Logout</a>
+    </div>
+</div>
+{% endblock %}
