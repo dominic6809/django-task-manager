@@ -123,11 +123,8 @@ task-management-system/ │ ├── task_manager/ # Main Django application �
 
 ## Screenshots
 
-### Task List
-![Task List](path/to/task_list_screenshot.png)
-
-### Task Form
-![Task Form](path/to/task_form_screenshot.png)
+(screenshot1.png)
+(screenshot2.png)
 
 ## License
 
