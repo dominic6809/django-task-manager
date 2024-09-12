@@ -1,0 +1,134 @@
+/* landing.css */
+
+/* Global Styles */
+body, h1, h2, h3, p, a {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Hero Section */
+.hero {
+    background: url('/static/images/hero-background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.hero .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.hero .navbar ul {
+    display: flex;
+    gap: 20px;
+}
+
+.hero .navbar li a {
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.hero .navbar li .btn-signup {
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.hero .btn-cta {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.features .features-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.features .feature-item {
+    flex: 1;
+    padding: 20px;
+}
+
+.features .icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+/* Call to Action Section */
+.cta {
+    background-color: #007bff;
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.cta .btn-cta {
+    background-color: #fff;
+    color: #007bff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+}

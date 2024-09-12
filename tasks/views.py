@@ -9,6 +9,9 @@ from .models import UserProfile, Task
 import datetime
 from django.urls import reverse_lazy
 
+def landing_page(request):
+    return render(request, 'landing.html')
+
 # User Registration View
 def register(request):
     if request.method == 'POST':

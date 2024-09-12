@@ -1,0 +1,67 @@
+<!-- templates/landing.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager | Organize Your Work Efficiently</title>
+    <link rel="stylesheet" href="{% static 'tasks/css/landing.css' %}">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">TaskManager</a>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'signup' %}" class="btn-signup">Sign Up</a></li>
+                </ul>
+            </nav>
+            <div class="hero-content">
+                <h1>Organize Your Work Efficiently</h1>
+                <p>TaskManager helps you streamline your tasks, manage your projects, and collaborate with your team effortlessly.</p>
+                <a href="{% url 'signup' %}" class="btn-cta">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <i class="icon icon-task"></i>
+                    <h3>Task Management</h3>
+                    <p>Create, manage, and track all your tasks in one place. Never miss a deadline again!</p>
+                </div>
+                <div class="feature-item">
+                    <i class="icon icon-team"></i>
+                    <h3>Team Collaboration</h3>
+                    <p>Assign tasks to team members and track progress in real time. Work better together.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="icon icon-project"></i>
+                    <h3>Project Tracking</h3>
+                    <p>Track the progress of your projects and make data-driven decisions to ensure success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Get Started with TaskManager Today</h2>
+            <a href="{% url 'signup' %}" class="btn-cta">Create Account</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+</html>
