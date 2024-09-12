@@ -1,63 +1,100 @@
-<!-- templates/landing.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager | Organize Your Work Efficiently</title>
-    <link rel="stylesheet" href="{% static 'tasks/css/landing.css' %}">
+    <title>Task Manager | Streamline Your Workflow</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
 </head>
 <body>
-    <!-- Hero Section -->
+    <!-- Header Section with Cover Image -->
     <header class="hero">
         <div class="container">
+            <!-- Navigation Bar -->
             <nav class="navbar">
                 <a href="#" class="logo">TaskManager</a>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#team">Team</a></li>
                     <li><a href="{% url 'login' %}">Login</a></li>
                     <li><a href="{% url 'signup' %}" class="btn-signup">Sign Up</a></li>
                 </ul>
             </nav>
+
+            <!-- Project Introduction -->
             <div class="hero-content">
-                <h1>Organize Your Work Efficiently</h1>
-                <p>TaskManager helps you streamline your tasks, manage your projects, and collaborate with your team effortlessly.</p>
-                <a href="{% url 'signup' %}" class="btn-cta">Get Started</a>
+                <h1>TaskManager</h1>
+                <p>Streamline your workflow and manage projects effortlessly.</p>
+                <a href="{% url 'app_home' %}" class="btn-cta">Go to Application</a>
             </div>
         </div>
     </header>
 
     <!-- Features Section -->
-    <section class="features">
+    <section id="features" class="features-highlight">
         <div class="container">
-            <h2>Features</h2>
-            <div class="features-list">
-                <div class="feature-item">
-                    <i class="icon icon-task"></i>
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature">
+                    <img src="{% static 'images/task_management.png' %}" alt="Task Management" class="feature-image">
                     <h3>Task Management</h3>
-                    <p>Create, manage, and track all your tasks in one place. Never miss a deadline again!</p>
+                    <p>Organize, prioritize, and track your tasks with ease. Set deadlines and receive notifications to keep everything on schedule.</p>
                 </div>
-                <div class="feature-item">
-                    <i class="icon icon-team"></i>
+                
+                <!-- Feature 2 -->
+                <div class="feature">
+                    <img src="{% static 'images/team_collaboration.png' %}" alt="Team Collaboration" class="feature-image">
                     <h3>Team Collaboration</h3>
-                    <p>Assign tasks to team members and track progress in real time. Work better together.</p>
+                    <p>Collaborate with your team in real-time, assign tasks, track progress, and stay informed about team efforts.</p>
                 </div>
-                <div class="feature-item">
-                    <i class="icon icon-project"></i>
+                
+                <!-- Feature 3 -->
+                <div class="feature">
+                    <img src="{% static 'images/project_tracking.png' %}" alt="Project Tracking" class="feature-image">
                     <h3>Project Tracking</h3>
-                    <p>Track the progress of your projects and make data-driven decisions to ensure success.</p>
+                    <p>Keep an eye on your project’s progress, timelines, and deadlines with an intuitive project tracking interface.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="cta">
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
-            <h2>Get Started with TaskManager Today</h2>
-            <a href="{% url 'signup' %}" class="btn-cta">Create Account</a>
+            <h2>About Our Project</h2>
+            <p>This project was inspired by the need for streamlined task management during a busy academic term. As a Portfolio Project for Holberton School, the aim was to create a tool that could handle everything from individual task management to team-based projects. Our goal was to eliminate the clutter and confusion caused by juggling multiple deadlines.</p>
+            
+            <p>We started this project in June 2024, when we noticed that managing tasks for multiple assignments, alongside collaboration in group projects, was chaotic without a centralized platform. This inspired us to build TaskManager—your solution to a more organized and efficient workflow.</p>
+            
+            <p>Feel free to check out our project repository on GitHub: <a href="https://github.com/yourrepo" target="_blank">GitHub Repository</a>.</p>
+            
+            <h3>Meet the Team</h3>
+            <ul class="team-list">
+                <li>
+                    <strong>Dominic</strong>
+                    <ul>
+                        <li><a href="https://linkedin.com/in/dominic" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://github.com/dominic6809" target="_blank">GitHub</a></li>
+                        <li><a href="https://twitter.com/dominic" target="_blank">Twitter</a></li>
+                    </ul>
+                </li>
+                <!-- Add more team members as needed -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="team" class="team-video">
+        <div class="container">
+            <h2>Learn More About Us</h2>
+            <p>Watch this video to learn more about the inspiration behind our project, our team members, and how TaskManager works.</p>
+            
+            <!-- Video Embed (YouTube or any video hosting) -->
+            <div class="video-container">
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/your_video_id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
     </section>
 
